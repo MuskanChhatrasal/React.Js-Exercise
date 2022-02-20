@@ -1,6 +1,7 @@
 import './App.css';
 import TwitterCounter from './Exercises/TwitterCount';
 import PasswordMatch from './Exercises/PasswordMatch';
+import AlphaNumeric from './Exercises/AlphanumericPassword';
 
 
 
@@ -11,6 +12,8 @@ function App() {
        <hr />
        <TwitterCounter />
        <PasswordMatch />
+       <hr />
+       <AlphaNumeric />
     </div>
   );
 }
