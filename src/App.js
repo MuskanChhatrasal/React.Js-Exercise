@@ -3,6 +3,7 @@ import TwitterCounter from './Exercises/TwitterCount';
 import PasswordMatch from './Exercises/PasswordMatch';
 import AlphaNumeric from './Exercises/AlphanumericPassword';
 import DisableSubmit from './Exercises/DisableSubmit';
+import ShowPassword from './Exercises/ShowPassword';
 
 
 
@@ -17,6 +18,8 @@ function App() {
        <AlphaNumeric />
        <hr />
        <DisableSubmit />
+       <hr />
+       <ShowPassword />
     </div>
   );
 }
