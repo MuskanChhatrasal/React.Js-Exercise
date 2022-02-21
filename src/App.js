@@ -2,6 +2,7 @@ import './App.css';
 import TwitterCounter from './Exercises/TwitterCount';
 import PasswordMatch from './Exercises/PasswordMatch';
 import AlphaNumeric from './Exercises/AlphanumericPassword';
+import DisableSubmit from './Exercises/DisableSubmit';
 
 
 
@@ -14,6 +15,8 @@ function App() {
        <PasswordMatch />
        <hr />
        <AlphaNumeric />
+       <hr />
+       <DisableSubmit />
     </div>
   );
 }
