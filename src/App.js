@@ -4,6 +4,7 @@ import PasswordMatch from './Exercises/PasswordMatch';
 import AlphaNumeric from './Exercises/AlphanumericPassword';
 import DisableSubmit from './Exercises/DisableSubmit';
 import ShowPassword from './Exercises/ShowPassword';
+import DesignerTool from './Exercises/DesignerTool';
 
 
 
@@ -20,6 +21,8 @@ function App() {
        <DisableSubmit />
        <hr />
        <ShowPassword />
+       <hr />
+       <DesignerTool />
     </div>
   );
 }
