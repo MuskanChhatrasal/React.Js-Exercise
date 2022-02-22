@@ -5,6 +5,8 @@ import AlphaNumeric from './Exercises/AlphanumericPassword';
 import DisableSubmit from './Exercises/DisableSubmit';
 import ShowPassword from './Exercises/ShowPassword';
 import DesignerTool from './Exercises/DesignerTool';
+import AddToCart from './Exercises/AddToCart';
+import SwitchTabs from './Exercises/SwitchTabs';
 
 
 
@@ -23,6 +25,10 @@ function App() {
        <ShowPassword />
        <hr />
        <DesignerTool />
+       <hr />
+       <AddToCart />
+       <hr />
+       <SwitchTabs />
     </div>
   );
 }
