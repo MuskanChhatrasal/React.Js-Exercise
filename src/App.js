@@ -7,6 +7,7 @@ import ShowPassword from './Exercises/ShowPassword';
 import DesignerTool from './Exercises/DesignerTool';
 import AddToCart from './Exercises/AddToCart';
 import SwitchTabs from './Exercises/SwitchTabs';
+import Toast from './Exercises/Toast';
 
 
 
@@ -29,6 +30,8 @@ function App() {
        <AddToCart />
        <hr />
        <SwitchTabs />
+       <hr />
+       <Toast />
     </div>
   );
 }
