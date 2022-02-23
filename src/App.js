@@ -9,6 +9,7 @@ import AddToCart from './Exercises/AddToCart';
 import SwitchTabs from './Exercises/SwitchTabs';
 import Toast from './Exercises/Toast';
 import TodoApp from './Exercises/TodoApp';
+import DarkMode from './Exercises/DarkMode';
 
 
 
@@ -35,6 +36,8 @@ function App() {
        <Toast />
        <hr />
        <TodoApp />
+       <hr />
+       <DarkMode />
     </div>
   );
 }
