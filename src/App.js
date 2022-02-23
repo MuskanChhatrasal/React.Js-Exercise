@@ -10,6 +10,7 @@ import SwitchTabs from './Exercises/SwitchTabs';
 import Toast from './Exercises/Toast';
 import TodoApp from './Exercises/TodoApp';
 import DarkMode from './Exercises/DarkMode';
+import LikeList from './Exercises/LikeList';
 
 
 
@@ -38,6 +39,8 @@ function App() {
        <TodoApp />
        <hr />
        <DarkMode />
+       <hr />
+       <LikeList />
     </div>
   );
 }
