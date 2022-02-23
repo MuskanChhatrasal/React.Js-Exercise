@@ -1,56 +1,87 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './styles.css'
-import { v4 as uuidv4 } from 'uuid';
 
+const items = [
+  {
+    id: 1,
+    name: 'Strawberry',
+    count: 0,
+  },
+  {
+    id: 2,
+    name: 'cherry',
+    count: 0,
+  },
+  {
+    id: 3,
+    name: 'lichi',
+    count: 0,
+  },
+  {
+    id: 4,
+    name: 'blueberry',
+    count: 0,
+  }
+]
 const AddToCart = () => {
-  const obj = [
-    {
-      id: uuidv4(),
-      name: 'strawberry',
-      price: 100,
-    },
-    {
-      id: uuidv4(),
-      name: 'cherry',
-      price: 80,
-    },
-    {
-      id: uuidv4(),
-      name: 'blueberry',
-      price: 120,
+  const [cartItems, setCartItems] = useState([]);
+  const filterItems = (items, itemId) => items.filter((item) => item.id === itemId);
+
+  const addToCart = (itemId) =>{
+    let updatedCart;
+    if(filterItems(cartItems, itemId).length>0){
+      updatedCart = cartItems.map((item)=>{
+        if(item.id === itemId){
+          return {
+            ...item, count: item.count+1
+          };
+        }
+        return item;
+      })
+    }else{
+      let item = filterItems(items, itemId)[0];
+      updatedCart = [...cartItems, item];
     }
-  ]
-  
-  function handleClick(id){
-    var itemId = id;
-    console.log(itemId);
+    setCartItems(updatedCart);
   }
 
-  // function displayProduct(id){
-  //   return (
-  //   <ul>
-  //     <li>
-  //       {obj.filter(item => item.id === id)}
-  //     </li>
-  //   </ul>
-  //   )
-  // }
+  const removeFromCart = (itemId) =>{
+    let updatedCart = cartItems.reduce((acc, item) =>{
+      if(item.id === itemId){
+        if(item.count > 1){
+            acc.push({...item, count: item.count-1})
+        }
+      }else{
+        acc.push(item)
+      }
+      return acc;
+    }, [])
+    setCartItems(updatedCart);
+  }
   return (
     <div>
-        <h2>Add To Cart</h2>
-        <ul>
-          {obj.map((item)=>{
-            return (
-              <div key={item.id}>
-                <li>{item.name} | Price: {item.price}</li>
-                <button onClick={()=>handleClick(item.id)}>Add to Cart</button>
-              </div>
-            )
-          })}
-        </ul>
-
-        {/* <h2>Your Cart: </h2>
-        {displayProduct()}; */}
+     <h2>Add To Cart App</h2>
+     <ul>
+       {items.map((item)=>{
+         return(
+           <li>{item.name}
+           <button onClick={()=>addToCart(item.id)}>Add To Cart</button>
+           </li>
+         )
+       })}
+      </ul>
+      <h2>Cart Items: </h2>
+      <ul>
+        {cartItems.map((item)=>{
+          return (
+            <li>{item.name}
+            <button onClick={()=>addToCart(item.id)}>+</button>
+            {item.count}
+            <button onClick={()=>removeFromCart(item.id)}>-</button>
+            </li>
+          )
+        })}
+      </ul>
     </div>
   )
 }
